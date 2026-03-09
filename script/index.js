@@ -25,6 +25,8 @@ let loadIssues = () => {
 let displayIssues = (issues) => {
     spinner.classList.add("hidden");
 
+    document.getElementById("issues-count").innerText = issues.length + " Issues";
+
     let issuesContainer = document.getElementById('issues-container');
     issuesContainer.innerHTML = '';
 
@@ -89,12 +91,14 @@ function showModal(issue){
 
 
 allBtn.addEventListener("click", function (){
+    spinner.classList.remove("hidden");
     resetBnts();
     allBtn.classList.add('btn-primary');
     displayIssues(allIssues);
 });
 
 openBtn.addEventListener('click', function () {
+    spinner.classList.remove("hidden");
     resetBnts();
     openBtn.classList.add('btn-primary');
     let openIssues = allIssues.filter(issue => issue.status === 'open');
@@ -102,6 +106,7 @@ openBtn.addEventListener('click', function () {
 })
 
 closedBtn.addEventListener("click", function(){
+    spinner.classList.remove("hidden");
     resetBnts();
     closedBtn.classList.add('btn-primary');
 
