@@ -19,6 +19,26 @@
 </head>
 
 <body>
+
+    <dialog id="issue-modal" class="modal">
+        <div class="modal-box">
+            <h3 id="modal-title" class="font-bold text-lg"></h3>
+            <p id="modal-description" class="py-2"></p>
+            <p><strong>Status:</strong> <span id="modal-status"></span></p>
+            <p><strong>Author:</strong> <span id="modal-author"></span></p>
+            <p><strong>Priority:</strong> <span id="modal-priority"></span></p>
+            <p><strong>Label:</strong> <span id="modal-label"></span></p>
+            <p><strong>Created:</strong> <span id="modal-created"></span></p>
+
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+
+        </div>
+    </dialog>
+
     <header>
         <nav class="max-w-[1350px] mx-auto flex justify-between my-6 p-3 bg-[#e9e9e947] rounded">
             <div class="left-side flex flex-col md:flex-row gap-2 justify-start md:items-center ">
@@ -86,7 +106,7 @@
             <span class="loading loading-dots loading-xl"></span>
         </div>
 
-        <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+        <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-6 cursor-pointer">
 
         </div>
 

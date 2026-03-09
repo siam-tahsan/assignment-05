@@ -24,7 +24,7 @@ let loadIssues = () => {
 
 let displayIssues = (issues) => {
     spinner.classList.add("hidden");
-    
+
     let issuesContainer = document.getElementById('issues-container');
     issuesContainer.innerHTML = '';
 
@@ -49,7 +49,42 @@ let displayIssues = (issues) => {
         </div>
         `
         issuesContainer.appendChild(issueCard);
+
+        issueCard.addEventListener("click", function(){
+        openIssueModal(issue.id)})
     });
+}
+
+function openIssueModal(id){
+
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
+    .then(res => res.json())
+    .then(data => {
+
+        showModal(data.data);
+
+    });
+
+}
+
+function showModal(issue){
+
+    document.getElementById("modal-title").innerText = issue.title;
+
+    document.getElementById("modal-description").innerText = issue.description;
+
+    document.getElementById("modal-status").innerText = issue.status;
+
+    document.getElementById("modal-author").innerText = issue.author;
+
+    document.getElementById("modal-priority").innerText = issue.priority;
+
+    document.getElementById("modal-label").innerText = issue.label;
+
+    document.getElementById("modal-created").innerText = issue.createdAt;
+
+    document.getElementById("issue-modal").showModal();
+
 }
 
 
