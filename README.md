@@ -19,4 +19,5 @@ Answer of Question---4️⃣
 
 
 Answer of Question---5️⃣
+    Template literals are used to create strings with variables inside them.They use backticks ( ) instead of quotes.
     
