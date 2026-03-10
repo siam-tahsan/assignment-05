@@ -135,18 +135,20 @@ function showModal(issue){
 
     document.getElementById("modal-description").innerText = issue.description;
 
-    document.getElementById("modal-status").innerText = issue.status;
-
-    document.getElementById("modal-author").innerText = issue.author;
-
-    document.getElementById("modal-priority").innerText = issue.priority;
-
-    document.getElementById("modal-label").innerText = issue.label;
+    document.getElementById("modal-author").innerText = "#" + issue.id + " by " + issue.author;
 
     document.getElementById("modal-created").innerText = issue.createdAt;
 
-    document.getElementById("issue-modal").showModal();
+    document.getElementById("modal-status-icon").innerHTML = openClosedTag(issue.status);
 
+    document.getElementById("modal-priority").innerText = issue.priority.toUpperCase();
+    document.getElementById("modal-priority").className =
+        "px-3 py-1 text-xs font-semibold rounded-full " + getPriorityColor(issue.priority);
+
+    document.getElementById("modal-labels").innerHTML =
+        issue.labels.map(label => createLabel(label)).join("");
+
+    document.getElementById("issue-modal").showModal();
 }
 
 
