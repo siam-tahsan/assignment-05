@@ -4,8 +4,15 @@ Answer of Question---1️⃣
     const: Used for variables whose value should not change. It cannot be updated or re-declared.
 
 
+
+
+
 Answer of Question---2️⃣
     The spread operator (...) is used to expand or copy elements from an array or object.It helps to combine arrays or copy data easily.
+
+
+
+
 
 
 Answer of Question---3️⃣
@@ -14,8 +21,18 @@ Answer of Question---3️⃣
     forEach(): Loops through the array but does not return a new array.
 
 
+
+
+
+
 Answer of Question---4️⃣
     An arrow function is a shorter way to write a function in JavaScript.
+
+
+
+
+
+
 
 
 Answer of Question---5️⃣
